@@ -1,0 +1,98 @@
+company "Carrefour Supermarket" {
+	codice "CND000234UYGF"
+	address {
+		street "Acquasanta"
+		city "L'Aquila"
+		country "Italy"
+		telephone "+39 0862 487801"
+	}
+	stores {
+		store "Main Store" {
+			items {
+				item "Rice" {
+					code "1-11C-R"
+					batch "1-22B-R"
+					description "Rice"
+					uom KG
+					availableNumber 100.0
+					isActive true
+					unitPrice price {
+						sellingPrice 10.0
+					}
+				},
+				item "Lentils" {
+					code "1-11C-L"
+					batch "1-22B-L"
+					description "Lentils"
+					uom KG
+					availableNumber 100.0
+					isActive true
+					unitPrice price {
+						sellingPrice 20.0
+					}
+				}
+			}
+		}
+	}
+	transactions {
+		transaction {
+			transactionNumber "1-11T"
+			issuedDate "Sun Feb 06 21:09:36 IST 2022"
+			transactionType CashSales
+			paymentMethod Card
+			customer "Haben" {
+	            surName "Birhane"
+            	identityNumber "C-00002-22-HB"
+            	phoneNumber  "9813212312"
+			}
+			cashier "Saroj" {
+				surName Bishowkarma
+				employeeId "1-11Id-Sbk"
+			}
+			lineItems {
+				lineItem {
+               		code "Li-MS-22-R"
+              		quantity 3.0
+              		item "Main Store.Rice"
+				},
+				lineItem {
+               		code "Li-MS-22-L"
+              		quantity 2.0
+              		item "Main Store.Lentils"
+				}
+			}
+			card {
+				cardNumber "1234 1234 1234"
+				expiryDate "01/28"
+				cardHolder Haben
+			}
+		},
+		transaction {
+			transactionNumber "1-11T"
+			issuedDate "Sun Feb 06 21:09:36 IST 2022"
+			transactionType CashSales
+			paymentMethod Card
+			customer "Ram" {
+	            surName "Gurung"
+            	identityNumber "C-00002-22"
+            	phoneNumber  "123123121"
+			}
+			cashier "Rahman" {
+				surName "Nawshin"
+				employeeId "1-11Id-RN"
+			}
+			lineItems {
+				lineItem {
+               		code "Li-MS-22-L"
+              		quantity 10.0
+              		item "Main Store.Lentils"
+				}
+			}
+			card {
+				cardNumber "1234 1234 1234"
+				expiryDate "01/11"
+				cardHolder Ram
+			}
+		}
+	}
+}

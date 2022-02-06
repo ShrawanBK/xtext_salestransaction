@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated assignment2 -->
+      <package
+            uri="http://www.sales.org/assignment2"
+            class="assignment2.Assignment2Package"
+            genModel="emf.assignment2/metamodel/assignment2.genmodel"/>
+   </extension>
+
+</plugin>

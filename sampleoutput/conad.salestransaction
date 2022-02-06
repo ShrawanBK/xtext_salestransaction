@@ -1,0 +1,101 @@
+company "Conad Supermarket" {
+	codice "CND000234UYGF"
+	address {
+		street "Via Albert Sabin"
+		city "L'Aquila"
+		country "Italy"
+		telephone "+39 352 456 8909"
+	}
+	stores {
+		store "Main Store" {
+			items {
+				item dove {
+					code "1-11C"
+					batch "1-22B"
+					description "Soap"
+					uom PCS
+					availableNumber 10.0
+					isActive true
+					unitPrice price {
+						sellingPrice 100.0
+					}
+				},
+				item "Head and Shoulder" {
+					code "1-11C"
+					batch "1-22B"
+					description "Shampoo"
+					uom PCS
+					availableNumber 100.0
+					isActive true
+					unitPrice price {
+						sellingPrice 200.0
+					}
+				}
+			}
+		}
+	}
+	transactions {
+		transaction {
+			transactionNumber "1-11T"
+			transactionType CashSales
+			paymentMethod Card
+			customer "Yishak" {
+	            surName "Gebremichael"
+            	identityNumber "C-00002-22"
+            	phoneNumber  "0937023107"
+			}
+			cashier "Shrawan" {
+				surName Bishowkarma
+				employeeId "1-11Id"
+			}
+			lineItems {
+				lineItem {
+               		code "Li-MS-22-d"
+              		quantity 3.0
+              		item "Main Store.dove"
+				},
+				lineItem {
+               		code "Li-MS-22-HaS"
+              		quantity 2.0
+              		item "Main Store.Head and Shoulder"
+				}
+			}
+			card {
+				cardNumber "1234 1234 1234"
+				expiryDate "01/11"
+				cardHolder Yishak
+			}
+		},
+		transaction {
+			transactionNumber "1-11T"
+			transactionType CashSales
+			paymentMethod Card
+			customer "Maliha" {
+	            surName "Rahman"
+            	identityNumber "C-00002-22"
+            	phoneNumber  "123123121"
+			}
+			cashier "Shrawan" {
+				surName Bishowkarma
+				employeeId "1-11Id"
+			}
+			lineItems {
+				lineItem {
+               		code "Li-MS-22-d"
+              		quantity 5.0
+              		item "Main Store.dove"
+				},
+				lineItem {
+               		code "Li-MS-22-HaS"
+              		quantity 10.0
+              		item "Main Store.Head and Shoulder"
+				}
+			}
+			card {
+				cardNumber "1234 1234 1234"
+				expiryDate "01/11"
+				cardHolder Maliha
+			}
+		}
+	}
+}

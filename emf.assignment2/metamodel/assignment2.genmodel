@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/xtext.sales.assignment3/src" modelPluginID="xtext.sales.assignment3"
+    modelName="Assignment2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>assignment2.ecore</foreignModel>
+  <genPackages prefix="Assignment2" disposableProviderFactory="true" ecorePackage="assignment2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment2.ecore#//PaymentMethod">
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//PaymentMethod/Cash"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//PaymentMethod/Card"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment2.ecore#//TaxType">
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TaxType/TaxExempt"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TaxType/IncomeTax"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TaxType/CorporateTax"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TaxType/VAT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment2.ecore#//TransactionType">
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TransactionType/CashSales"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TransactionType/CreditSales"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//TransactionType/AdvancePaymentSales"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment2.ecore#//UoM">
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//UoM/PCS"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//UoM/KG"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//UoM/LTR"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment2.ecore#//UoM/M"/>
+    </genEnums>
+    <genClasses ecoreClass="assignment2.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Company">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Company/codice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Company/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Company/store"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Company/transaction"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Address">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Address/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Address/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Address/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Address/telephone"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Store">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Store/item"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference assignment2.ecore#//Store/company"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Item">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Item/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Item/batch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Item/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Item/uom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Item/availableNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Item/unitPrice"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference assignment2.ecore#//Item/store"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Item/isActive.1"/>
+      <genOperations ecoreOperation="assignment2.ecore#//Item/isAvailable"/>
+      <genOperations ecoreOperation="assignment2.ecore#//Item/isActive"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Transaction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Transaction/transactionNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Transaction/issuedDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Transaction/transactionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Transaction/paymentMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Transaction/grandTotal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Transaction/totalItemsPurchased"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Transaction/customer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Transaction/cashier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Transaction/lineItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Transaction/card"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="assignment2.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Person/surName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Person/customer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//Person/cashier"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Customer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Customer/identityNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Customer/phoneNumber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Customer/card"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Cashier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Cashier/employeeId"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//LineItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//LineItem/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//LineItem/quantity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//LineItem/subTotal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//LineItem/item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//LineItem/tax"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//LineItem/discount"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment2.ecore#//LineItem/additionalCharge"/>
+      <genOperations ecoreOperation="assignment2.ecore#//LineItem/isItemInStock"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Tax">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Tax/taxType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Tax/taxableAmount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Tax/taxAmount"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Discount">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Discount/percentage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Discount/amount"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//AdditionalCharge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//AdditionalCharge/serviceCharge"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Card">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment2.ecore#//Card/cardHolder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Card/cardNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Card/expiryDate"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment2.ecore#//Price">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment2.ecore#//Price/sellingPrice"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

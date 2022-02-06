@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: xtext.assignment3.salestransaction
+Bundle-ManifestVersion: 2
+Bundle-Name: xtext.assignment3.salestransaction
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtext.assignment3.salestransaction; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: xtext.sales.assignment3,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: xtext.sales.assignment3.transaction.formatting2,
+ xtext.sales.assignment3.transaction,
+ xtext.sales.assignment3.transaction.generator,
+ xtext.sales.assignment3.transaction.validation,
+ xtext.sales.assignment3.transaction.services,
+ xtext.sales.assignment3.transaction.scoping,
+ xtext.sales.assignment3.transaction.parser.antlr.internal,
+ xtext.sales.assignment3.transaction.parser.antlr,
+ xtext.sales.assignment3.transaction.serializer
+Import-Package: org.apache.log4j
